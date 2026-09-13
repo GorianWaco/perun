@@ -1,0 +1,64 @@
+# Flatpak manifest — Perun
+# Build: ./build-flatpak.sh
+
+app-id: pl.gorian.Perun
+runtime: org.gnome.Platform
+runtime-version: "50"
+sdk: org.gnome.Sdk
+command: perun
+separate-locales: false
+
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  # Steam, Proton, kopie localconfig.vdf
+  - --filesystem=home
+  # steam / pgrep na hoście
+  - --talk-name=org.freedesktop.Flatpak
+  - --env=PYTHONUNBUFFERED=1
+
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share/pkgconfig
+  - /share/man
+  - /share/gtk-doc
+  - /share/doc
+  - "*.a"
+  - "*.la"
+
+modules:
+  - name: python3-vdf
+    buildsystem: simple
+    build-options:
+      build-args:
+        - --share=network
+    build-commands:
+      - pip3 install --prefix=/app --no-cache-dir vdf
+
+  - name: perun
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 perun.py /app/lib/perun/perun.py
+      - install -Dm755 flatpak/perun.sh /app/bin/perun
+      - install -Dm644 flatpak/pl.gorian.Perun.desktop
+          /app/share/applications/pl.gorian.Perun.desktop
+      - install -Dm644 flatpak/pl.gorian.Perun.metainfo.xml
+          /app/share/metainfo/pl.gorian.Perun.metainfo.xml
+      - install -Dm644 icons/perun.svg
+          /app/share/icons/hicolor/scalable/apps/pl.gorian.Perun.svg
+    sources:
+      - type: dir
+        path: ..
+        skip:
+          - __pycache__
+          - "**/__pycache__"
+          - "**/*.pyc"
+          - dist
+          - flatpak/build
+          - flatpak/repo
+          - .flatpak-builder
+          - .git

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Perun
+Name[pl]=Perun
+Comment=Configure Steam launch options and Proton
+Comment[pl]=Opcje uruchamiania i Proton dla gier Steam
+Exec=perun
+Icon=perun
+Terminal=false
+Categories=Utility;Game;
+Keywords=Perun;Steam;Proton;MangoHud;GameMode;launch;Battle.net;
+StartupNotify=true
