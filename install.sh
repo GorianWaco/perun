@@ -16,7 +16,7 @@ APP_NAME="Perun"
 APP_ID="perun"
 FLATPAK_ID="pl.gorian.Perun"
 OLD_ID="steam-launch"
-VERSION="1.5.0"
+VERSION="1.9.0"
 FLATHUB_REPO="https://dl.flathub.org/repo/flathub.flatpakrepo"
 
 MODE="native"

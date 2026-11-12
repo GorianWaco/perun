@@ -15,20 +15,26 @@
     <p>
       Perun is a GTK4/libadwaita editor for Steam launch options on Linux.
       It lists installed games and non-Steam shortcuts (Battle.net, GOG…),
+      can also show uninstalled games Steam already cached for the account,
       sets Proton versions, GameMode, MangoHud, and can download GE-Proton
-      and Proton-CachyOS into compatibilitytools.d.
+      and Proton-CachyOS into compatibilitytools.d. Game settings export to
+      a JSON file another Perun can import.
     </p>
     <p xml:lang="pl">
       Perun to edytor opcji uruchamiania Steam na Linuksie (GTK4/libadwaita).
       Pokazuje zainstalowane gry i skróty spoza Steam (Battle.net, GOG…),
-      ustawia Protona, GameMode, MangoHud i potrafi doinstalować GE-Proton
-      oraz Proton-CachyOS.
+      a na życzenie też niezainstalowane gry z pamięci biblioteki konta.
+      Ustawia Protona, GameMode, MangoHud i potrafi doinstalować GE-Proton
+      oraz Proton-CachyOS. Ustawienia gier można wyeksportować do JSON
+      i wczytać w Perunie na innym komputerze.
     </p>
     <ul>
       <li>Launch options written to localconfig.vdf / shortcuts.vdf</li>
       <li>Per-game Proton (GE, CachyOS, Experimental, Hotfix)</li>
       <li>Install GE-Proton and Proton-CachyOS from GitHub</li>
       <li>MangoHud, GameMode, NVAPI presets</li>
+      <li>Steam starts in the Library and can hide games that are not installed locally</li>
+      <li>Export and import per-game launch options and Proton</li>
     </ul>
   </description>
   <launchable type="desktop-id">pl.gorian.Perun.desktop</launchable>
@@ -45,6 +51,26 @@
     <category>Game</category>
   </categories>
   <releases>
+    <release version="1.9.0" date="2026-10-19">
+      <description>
+        <p>The Proton list follows the October 2026 Steam client and includes the Proton Stable alias together with the other tools Steam offers.</p>
+      </description>
+    </release>
+    <release version="1.8.0" date="2026-10-10">
+      <description>
+        <p>Export one selected game as well as every customized game. The interface can be Polish, English, or German.</p>
+      </description>
+    </release>
+    <release version="1.7.0" date="2026-10-10">
+      <description>
+        <p>Perun can set the Steam friends status before it starts the client. The native launcher window uses the same dock icon as the Perun shortcut.</p>
+      </description>
+    </release>
+    <release version="1.6.0" date="2026-10-09">
+      <description>
+        <p>Steam can start in the Library and show only locally installed games. Perun lists the rest of the cached account library and exports or imports per-game launch options and Proton.</p>
+      </description>
+    </release>
     <release version="1.5.0" date="2026-09-13">
       <description>
         <p>Flatpak packaging, multi-distro installer, Proton downloads, non-Steam shortcuts, 120 FPS pacing helpers.</p>

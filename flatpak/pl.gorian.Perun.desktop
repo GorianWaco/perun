@@ -4,6 +4,7 @@ Name=Perun
 Name[pl]=Perun
 Comment=Configure Steam launch options and Proton
 Comment[pl]=Opcje uruchamiania i Proton dla gier Steam
+Comment[de]=Steam-Startoptionen und Proton einstellen
 Exec=perun
 Icon=pl.gorian.Perun
 Terminal=false
